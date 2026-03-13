@@ -8,6 +8,7 @@ const steps = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		status: z.enum(['Draft', 'Stub']).optional(),
+		"next-step": z.string().optional(),
 		hashes: z.object({
 			predraft: z.string().optional(),
 			draft: z.string().optional(),

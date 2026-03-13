@@ -3,8 +3,33 @@ import Layout from '../layouts/Layout.astro';
 import StepList from '../components/StepList.astro';
 ---
 
-<Layout title={"Build a Browser!"}>
-	<h1>BuildABrowser</h1>
-	<h2>Let's get started!</h2>
+<Layout title={"Build a browser!"}>
+	<div class="intro-card">
+		<h1>BuildABrowser</h1>
+		<p>
+			BuildABrowser is a project to build a browser and its rendering engine, and then document it
+			such that others can rebuild it for themselves.
+		</p>
+	</div>
 	<StepList/>
 </Layout>
+
+<style>
+	.intro-card {
+		text-align: center;
+		margin: 4em;
+	}
+	.intro-card p {
+		margin: auto;
+		max-width: 40em;
+	}
+	.intro-card h1 {
+		font-size: xxx-large;
+	}
+
+	@media screen and (max-width: 500px) {	
+		.intro-card h1 {
+			font-size: xx-large;
+		}	
+	}
+</style>

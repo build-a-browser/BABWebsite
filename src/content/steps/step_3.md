@@ -2,6 +2,7 @@
 title: 'Step 3: A Very Basic DOM'
 description: 'Get a feel for the browser DOM, creating a basic tree that will suffice for some basic HTML parsing.'
 status: 'Draft'
+next-step: 'step_4'
 hashes:
   predraft: 'a34ac1a12a8609dfa62da1ee2670c9e56dee6e27' 
 ---

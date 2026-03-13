@@ -2,6 +2,7 @@
 title: 'Step 2: Show a Window'
 description: 'Open a window with text loaded from a file or server, using a URL passed via the command-line.'
 status: 'Draft'
+next-step: 'step_3'
 hashes:
   predraft: '4e4689fb4a7be85b778bfc15f3cd8b43483e5481'
 examples:

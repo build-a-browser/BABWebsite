@@ -2,6 +2,7 @@
 title: 'Step 1: Initial Commit'
 description: 'Learn more about BuildABrowser. Initialize your repository.'
 status: 'Draft'
+next-step: 'step_2'
 hashes:
   predraft: 'ac35e0bcafd2b7570e71a30f9f0af9c5469eca9c' 
 ---

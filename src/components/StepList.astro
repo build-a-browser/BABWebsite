@@ -1,17 +1,24 @@
 ---
 import { getCollection } from 'astro:content'
 const steps = await getCollection('steps');
+
+const colors = [
+	"#C44A3ABB",
+	"#D97A2BBB",
+	"#F2D479BB",
+	"#6FAF4FBB",
+];
 ---
 
 <ul class="step-list">
-	{ steps.map(step => <li>
+	{ steps.map((step, i) => <li style={`background-color: ${colors[i % 4]};`}>
 		<a href={`/steps/${step.id}`} class="step-link"><div class="step-tile">
 			<h3 class="step-header">{step.data.title}</h3>
 			{ step.data.status && <span>{step.data.status}</span> }
 			<p>{step.data.description}</p>
 		</div></a>
 	</li>) }
-	<div class="flex-filler"></div>
+	<li><div></div></li>
 </ul>
 
 <style>
@@ -22,26 +29,34 @@ const steps = await getCollection('steps');
 		justify-content: space-between;
 
 		list-style-type: none;
-		padding: 0;
-		margin: 2em;
+		padding: 0 2em;
+		max-width: min(100%, 120em);
+		margin: auto;
 	}
 	.step-list li {
-		flex-basis: calc(33% - 2em);
+		flex-basis: max(20em, calc(33% - 2em));
+		min-width: min-content;
+		max-width: max-content;
+		flex-grow: 1;
 	}
 	.step-link {
+		display: block;
 		text-decoration: none;
 		color: inherit;
+		height: calc(100% - 2em);
 	}
 	.step-tile {
 		cursor: pointer;
-		background-color: var(--color-background-secondary, gray);
-		padding: 1em;
+		padding: 1em 2em;
+		height: 100%;
+		position: relative;
+	}
+	.step-tile:hover {
+		background-color: #00000022;
+		top: 1px;
+		left: 1px;
 	}
 	.step-header {
 		text-decoration: underline;
-	}
-	.flex-filler {
-		height: 1px;
-		flex-grow: 1;
 	}
 </style>
