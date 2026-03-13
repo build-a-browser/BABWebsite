@@ -1,5 +1,15 @@
 <header>
-	<h1><a href="/" class="header-link">BuildABrowser</a></h1>
+	<h1><a href="/" class="header-link main-header-link">BuildABrowser</a></h1>
+	<a
+		href="https://github.com/build-a-browser/build-a-browser-predraft"
+		target="_blank"
+		class="header-link"
+	>Browser Source (GitHub)</a>
+	<a
+		href="https://github.com/build-a-browser/BABWebsite"
+		target="_blank"
+		class="header-link"
+	>Webpage Source (GitHub)</a>
 </header>
 
 <style>
@@ -7,6 +17,10 @@
 		position: sticky;
 		top: 0px;
 		left: 0px;
+
+		display: flex;
+		align-items: center;
+		gap: 2em;
 
 		background-color: var(--color-background-secondary);
 		min-height: 2em;
@@ -16,10 +30,14 @@
 
 	header h1 {
 		font-size: 1.5em;
+		flex-grow: 1;
 	}
 
 	.header-link {
-		all: inherit;
-		cursor: pointer;
+		color: var(--color-foreground-primary)
+	}
+
+	.main-header-link {
+		text-decoration: none;
 	}
 </style>

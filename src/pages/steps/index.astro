@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StepList from '../../components/StepList.astro';
+---
+
+<Layout title={"Build a browser!"}>
+	<div class="semicentered nav">
+		<h1>Steps</h1>
+		<p id="steps-desc">
+			If rebuilding from scratch, follow each step in order.
+			If you want to check out a specific step, check out the step's associated commit (each step indicates its hash)
+			then run `git checkout HEAD^` before following the step (except for the initial commit).
+		</p>
+		<a href="/"><button class="nav-button ac-1">Back to Main Page</button></a>
+	</div>
+	<StepList/>
+</Layout>
+
+<style>
+	.nav {
+		margin: 2em auto 1em;
+		padding: 0 2em;
+	}
+
+	#steps-desc {
+		max-width: 50em;
+	}
+</style>

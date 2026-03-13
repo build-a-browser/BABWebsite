@@ -1,23 +1,25 @@
 ---
 import { getCollection } from 'astro:content'
 const steps = await getCollection('steps');
+const { max } = Astro.props;
 
 const colors = [
-	"#C44A3ABB",
-	"#D97A2BBB",
-	"#F2D479BB",
-	"#6FAF4FBB",
+	"ac-1", "ac-2", "ac-3", "ac-4"
 ];
 ---
 
-<ul class="step-list">
-	{ steps.map((step, i) => <li style={`background-color: ${colors[i % 4]};`}>
-		<a href={`/steps/${step.id}`} class="step-link"><div class="step-tile">
-			<h3 class="step-header">{step.data.title}</h3>
-			{ step.data.status && <span>{step.data.status}</span> }
-			<p>{step.data.description}</p>
-		</div></a>
-	</li>) }
+<ul class="step-list semicentered">
+	{ steps
+		.filter((_, i) => !max || i < max)
+		.map((step, i) => <li class={colors[i % 4]}>
+			<a href={`/steps/${step.id}`} class="step-link"><div class="step-tile">
+				<div>
+					<h3 class="step-header">{step.data.title}</h3>
+					{ step.data.status && <span class="step-status">({step.data.status})</span> }
+				</div>
+				<p>{step.data.description}</p>
+			</div></a>
+		</li>) }
 	<li><div></div></li>
 </ul>
 
@@ -30,8 +32,6 @@ const colors = [
 
 		list-style-type: none;
 		padding: 0 2em;
-		max-width: min(100%, 120em);
-		margin: auto;
 	}
 	.step-list li {
 		flex-basis: max(20em, calc(33% - 2em));
@@ -58,5 +58,11 @@ const colors = [
 	}
 	.step-header {
 		text-decoration: underline;
+		display: inline-block;
+		margin-bottom: .5em;
+	}
+	.step-status {
+		padding-left: .2em;
+		font-size: .8em;
 	}
 </style>

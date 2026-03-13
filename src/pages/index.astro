@@ -7,11 +7,26 @@ import StepList from '../components/StepList.astro';
 	<div class="intro-card">
 		<h1>BuildABrowser</h1>
 		<p>
-			BuildABrowser is a project to build a browser and its rendering engine, and then document it
+			BuildABrowser is a project aiming to build a browser and its rendering engine, and then document it
 			such that others can rebuild it for themselves.
 		</p>
 	</div>
-	<StepList/>
+	<div class="semicentered section">
+		<h2>Download a build:</h2>
+	</div>
+	<div id="downloads" class="semicentered">
+		<a href="about:blank"><button class="nav-button ac-4">Linux (Tested on Arch Linux)</button></a>
+		<a href="about:blank"><button class="nav-button ac-1">Windows (Tested on Windows 11)</button></a>
+		<a href="about:blank"><button class="nav-button ac-2">MacOS (Not Tested)</button></a>
+	</div>
+	</div>
+	<div class="semicentered section">
+		<h2>Take a look at some steps:</h2>
+	</div>
+	<StepList max={6}/>
+	<div class="semicentered section">
+		<a href="/steps"><button class="nav-button ac-1 all-steps">All Steps</button></a>
+	</div>
 </Layout>
 
 <style>
@@ -25,6 +40,33 @@ import StepList from '../components/StepList.astro';
 	}
 	.intro-card h1 {
 		font-size: xxx-large;
+	}
+
+	.section {
+		margin: 1em auto;
+		padding: 0 2em;
+	}
+	.all-steps {
+		width: min(80vw, 20em);
+	}
+
+	#downloads {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 2em;
+		column-gap: 2em;
+	}
+	#downloads > * {
+		flex-grow: 1;
+	}
+	#downloads > a {
+		flex-grow: 1;
+		text-decoration: none;
+	}
+	#downloads .nav-button {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
 	}
 
 	@media screen and (max-width: 500px) {	
