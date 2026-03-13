@@ -10,17 +10,25 @@
 		target="_blank"
 		class="header-link"
 	>Webpage Source (GitHub)</a>
+	<a
+		href="https://discord.com/"
+		target="_blank"
+		class="header-link"
+	>Discord</a>
 </header>
 
 <style>
 	header {
 		position: sticky;
+
+		z-index: 1;
 		top: 0px;
 		left: 0px;
 
 		display: flex;
 		align-items: center;
 		gap: 2em;
+		flex-wrap: wrap;
 
 		background-color: var(--color-background-secondary);
 		min-height: 2em;
@@ -39,5 +47,11 @@
 
 	.main-header-link {
 		text-decoration: none;
+	}
+
+	@media screen and (max-width: 80em) {
+		header {
+			position: static;
+		}
 	}
 </style>

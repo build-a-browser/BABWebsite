@@ -39,9 +39,15 @@ const { Content } = await render(post);
 			<a href={i} target="_blank">{i}</a>
 		</li>) }</ul> : <p>No related WPT pages listed</p> }
 	</div>
+	<div class="content">
+		<h3>Related Specifications</h3>
+		{ post.data.specs ? <ul>{ post.data.specs.map(i => <li>
+			<a href={i} target="_blank">{i}</a>
+		</li>) }</ul> : <p>No related specifications listed</p> }
+	</div>
 	<div class="post-controls">
 		{ post.data['next-step'] && <a href={post.data['next-step'] + ".md"}>
-			<button class="nav-button ac-4">Next Page</button>
+			<button class="nav-button ac-4">Next Step</button>
 		</a> }
 	</div>
 </Layout>

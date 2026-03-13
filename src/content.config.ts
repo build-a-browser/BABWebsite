@@ -15,7 +15,8 @@ const steps = defineCollection({
 			release: z.string().optional()
 		}).optional(),
 		examples: z.array(z.string()).optional(),
-		"wpt-pages": z.array(z.string()).optional()
+		"wpt-pages": z.array(z.string()).optional(),
+		specs: z.array(z.string()).optional(),
 	}),
 });
 

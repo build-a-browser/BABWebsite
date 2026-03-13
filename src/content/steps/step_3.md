@@ -4,7 +4,9 @@ description: 'Get a feel for the browser DOM, creating a basic tree that will su
 status: 'Draft'
 next-step: 'step_4'
 hashes:
-  predraft: 'a34ac1a12a8609dfa62da1ee2670c9e56dee6e27' 
+  predraft: 'a34ac1a12a8609dfa62da1ee2670c9e56dee6e27'
+specs:
+  - 'https://dom.spec.whatwg.org'
 ---
 
 The previous step, step 2, was extremely simple. Consider that a warm-up. Because now, we're immeadietly diving into the real stuff!
@@ -47,7 +49,7 @@ public record Document(List<Node> children) implements Node {}
 
 While records here are easier to demonstrate with, we will need to store state later, so let's just convert them to interfaces and classes now.
 
-While at it, to allow easier `println` debugging, we'll add pretty-printers to all of them to make it look more HTML-like
+While at it, to allow easier `println` debugging, we'll add pretty-printers to all of them to make it look more HTML-like:
 
 [TODO: Convert the below to interfaces and classes]
 ```java

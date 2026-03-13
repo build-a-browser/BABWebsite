@@ -1,13 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import DemoScreenshot from '../assets/demo_screenshot.png';
 import StepList from '../components/StepList.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title={"Build a browser!"}>
 	<div class="intro-card">
 		<h1>BuildABrowser</h1>
 		<p>
-			BuildABrowser is a project aiming to build a browser and its rendering engine, and then document it
+			BuildABrowser is a project aiming to build a browser and its rendering engine in Java, and then document it
 			such that others can rebuild it for themselves.
 		</p>
 	</div>
@@ -19,6 +21,17 @@ import StepList from '../components/StepList.astro';
 		<a href="about:blank"><button class="nav-button ac-1">Windows (Tested on Windows 11)</button></a>
 		<a href="about:blank"><button class="nav-button ac-2">MacOS (Not Tested)</button></a>
 	</div>
+	<div id="command" class="semicentered section">
+		<p>
+			You need Java 24. By default, BuildABrowser uses Skija for drawing. You can use Java2D by adding the <span class="small-code">--use-java2d</span>
+			flag to the end of the below command, though you should only do so if you get Skija-related errors.
+		</p>
+		<code>
+			java -Xms32m
+					-XX:MaxHeapFreeRatio=10 -XX:MinHeapFreeRatio=10
+					-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders
+					-Djava.net.preferIPv4Stack=true -jar buildabrowser.jar
+		</code>
 	</div>
 	<div class="semicentered section">
 		<h2>Take a look at some steps:</h2>
@@ -26,6 +39,20 @@ import StepList from '../components/StepList.astro';
 	<StepList max={6}/>
 	<div class="semicentered section">
 		<a href="/steps"><button class="nav-button ac-1 all-steps">All Steps</button></a>
+	</div>
+	<div id="demo" class="section">
+		<h2>See a demo!</h2>
+		<a href={DemoScreenshot.src}>
+			<Image
+				src={DemoScreenshot}
+				alt="A screenshot containing two BuildABrowser windows"
+				width="1920"
+				id="demo-screenshot"
+			/>
+		</a>
+	</div>
+	<div class="section">
+		Created by Jason Gronn (@EveryOS)
 	</div>
 </Layout>
 
@@ -50,6 +77,12 @@ import StepList from '../components/StepList.astro';
 		width: min(80vw, 20em);
 	}
 
+	.small-code {
+		font-family: monospace;
+		display: inline-block;
+		color: var(--color-foreground-small-code, maroon);
+	}
+
 	#downloads {
 		display: flex;
 		flex-wrap: wrap;
@@ -67,6 +100,27 @@ import StepList from '../components/StepList.astro';
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
+	}
+
+	#command p {
+		max-width: 55em;
+	}
+	#command code {
+		white-space: nowrap;
+		max-width: 100%;
+		overflow: auto;
+		display: block;
+	}
+
+	#demo {
+		background-color: var(--color-background-secondary);
+		padding: 2em 0;
+		text-align: center;
+	}
+	#demo-screenshot {
+		width: clamp(50%, 80em, 100%);
+		height: auto;
+		margin: auto;
 	}
 
 	@media screen and (max-width: 500px) {	
