@@ -1,4 +1,12 @@
-# Step 2: Show a window
+---
+title: 'Step 2: Show a Window'
+description: 'Open a window with text loaded from a file or server, using a URL passed via the command-line.'
+status: 'Draft'
+hashes:
+  predraft: '4e4689fb4a7be85b778bfc15f3cd8b43483e5481'
+examples:
+  - 'just_text.html'
+---
 
 One question you might have when looking into browser development is "where do I even start?".
 

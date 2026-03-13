@@ -1,4 +1,10 @@
-# Step 4: Roots of an HTML Parser
+---
+title: 'Step 4: A Very Basic HTML Parser'
+description: 'Learn how an HTML parser uses a state machine to convert HTML to a DOM.'
+status: 'Draft'
+hashes:
+  predraft: '26e3847a932ea2dfb44156e9fd50f70c810fadfb' 
+---
 
 In this step, we will start parsing HTML.
 

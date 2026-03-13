@@ -3,18 +3,14 @@ title: 'Step 1: Initial Commit'
 description: 'Learn more about BuildABrowser. Initialize your repository.'
 status: 'Draft'
 hashes:
-    predraft: 'ac35e0bcafd2b7570e71a30f9f0af9c5469eca9c' 
+  predraft: 'ac35e0bcafd2b7570e71a30f9f0af9c5469eca9c' 
 ---
-
-# BuildABrowser: First Beginnings
-
-## Step 1: Initial Commit
 
 ## Prelude
 
-HELLO! And welcome to BuildABrowser, where you - you guessed it - build a browser!
+Hello! And welcome to BuildABrowser, where you - you guessed it - build a browser!
 
-Specifically, BuildABrowser (alternatively called BAB, babbrowser, Build A Browser, or Build-A-Browser).
+Specifically, you rebuild BuildABrowser, a Java-Based browser.
 
 BuildABrowser, while encompassing elements from the entire browser, is primarily focused on building the *rendering engine*.
 You can think of this as the part of the web browser focused on showing the web page itself.

@@ -1,4 +1,10 @@
-# Step 3: A Very Basic DOM
+---
+title: 'Step 3: A Very Basic DOM'
+description: 'Get a feel for the browser DOM, creating a basic tree that will suffice for some basic HTML parsing.'
+status: 'Draft'
+hashes:
+  predraft: 'a34ac1a12a8609dfa62da1ee2670c9e56dee6e27' 
+---
 
 The previous step, step 2, was extremely simple. Consider that a warm-up. Because now, we're immeadietly diving into the real stuff!
 

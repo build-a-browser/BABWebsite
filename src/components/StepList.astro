@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content'
+const steps = await getCollection('steps');
+---
+
+<ul class="step-list">
+	{ steps.map(step => <li>
+		<a href={`/steps/${step.id}`} class="step-link"><div class="step-tile">
+			<h3 class="step-header">{step.data.title}</h3>
+			{ step.data.status && <span>{step.data.status}</span> }
+			<p>{step.data.description}</p>
+		</div></a>
+	</li>) }
+	<div class="flex-filler"></div>
+</ul>
+
+<style>
+	.step-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		justify-content: space-between;
+
+		list-style-type: none;
+		padding: 0;
+		margin: 2em;
+	}
+	.step-list li {
+		flex-basis: calc(33% - 2em);
+	}
+	.step-link {
+		text-decoration: none;
+		color: inherit;
+	}
+	.step-tile {
+		cursor: pointer;
+		background-color: var(--color-background-secondary, gray);
+		padding: 1em;
+	}
+	.step-header {
+		text-decoration: underline;
+	}
+	.flex-filler {
+		height: 1px;
+		flex-grow: 1;
+	}
+</style>
