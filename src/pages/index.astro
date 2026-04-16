@@ -12,6 +12,10 @@ import Layout from '../layouts/Layout.astro';
 			BuildABrowser is a project aiming to build a browser and its rendering engine in Java, and then document it
 			such that others can rebuild it for themselves.
 		</p>
+		<span id="demo-links">
+			<a href="#demo">Jump to Screenshots</a> |
+			<a href="https://youtube.com/">View on <span style="color: #ff0033;">YouTube</span></a>
+		</span>
 	</div>
 	<div class="semicentered section">
 		<h2>Download a build:</h2>
@@ -22,16 +26,22 @@ import Layout from '../layouts/Layout.astro';
 		<a href="about:blank"><button class="nav-button ac-2">MacOS (Not Tested)</button></a>
 	</div>
 	<div id="command" class="semicentered section">
-		<p>
-			You need Java 24. By default, BuildABrowser uses Skija for drawing. You can use Java2D by adding the <span class="small-code">--use-java2d</span>
-			flag to the end of the below command, though you should only do so if you get Skija-related errors.
-		</p>
+		<h4>Java 24:</h4>
 		<code>
 			java -Xms32m
-					-XX:MaxHeapFreeRatio=10 -XX:MinHeapFreeRatio=10
-					-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders
-					-Djava.net.preferIPv4Stack=true -jar buildabrowser.jar
+				-XX:MaxHeapFreeRatio=10 -XX:MinHeapFreeRatio=10
+				-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders
+				-Djava.net.preferIPv4Stack=true -jar buildabrowser.jar
 		</code>
+		<h4>Java 25 (LTS):</h4>
+		<code>
+			java -Xms32m
+				-XX:MaxHeapFreeRatio=10 -XX:MinHeapFreeRatio=10
+				-Djava.net.preferIPv4Stack=true -jar buildabrowser.jar
+		</code>
+		<p>
+			By default, BuildABrowser uses Skija for drawing. You can use Java2D by adding the <span class="small-code">--use-java2d</span>.
+		</p>
 	</div>
 	<div class="semicentered section">
 		<h2>Take a look at some steps:</h2>
@@ -51,9 +61,16 @@ import Layout from '../layouts/Layout.astro';
 			/>
 		</a>
 	</div>
-	<div class="section">
-		Created by Jason Gronn (@EveryOS)
-	</div>
+	<footer class="section">
+		Created by Jason Gronn (@EveryOS) | <a href="mailto:jgronn@buildabrowser.net">mailto:jgronn@buildabrowser.net</a><br/>
+		Socials
+		| <a href="https://github.com/JasonTheKitten/">GitHub</a>
+		| <a href="https://www.linkedin.com/in/jason-gronn/">LinkedIn</a>
+		| <a href="https://www.deviantart.com/everyos">DeviantArt</a>
+		| <a href="https://news.ycombinator.com/user?id=everyos_">Hacker News</a>
+		| <a href="https://www.reddit.com/user/everyos/" style="font-size: .75em;">Reddit</a>
+		| Discord: everyos
+	</footer>
 </Layout>
 
 <style>
@@ -81,6 +98,14 @@ import Layout from '../layouts/Layout.astro';
 		font-family: monospace;
 		display: inline-block;
 		color: var(--color-foreground-small-code, maroon);
+	}
+
+	#demo-links {
+		display: block;
+		margin: .5em;
+	}
+	#demo-links a {
+		color: gray;
 	}
 
 	#downloads {
@@ -123,9 +148,23 @@ import Layout from '../layouts/Layout.astro';
 		margin: auto;
 	}
 
+	footer {
+		position: sticky;
+		bottom: 1em;
+		left: 0
+	}
+
+	footer a {
+		color: white;
+	}
+
 	@media screen and (max-width: 500px) {	
 		.intro-card h1 {
 			font-size: xx-large;
-		}	
+		}
+
+		footer {
+			position: static;
+		}
 	}
 </style>
